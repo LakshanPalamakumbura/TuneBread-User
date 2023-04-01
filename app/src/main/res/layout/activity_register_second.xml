@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_back"
+    tools:context=".RegisterFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-25dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_ash" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_btn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/back_icon"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/view_caption_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Second Step"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp" />
+    <RelativeLayout
+        android:id="@+id/layoutMiddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_caption_1"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <Spinner
+                    android:id="@+id/txtVehicleType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/register_edit_texts_tint_text_headings"
+                    android:background="@color/white"
+                    android:hint="Vehicle Type"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings" />
+
+                <EditText
+                    android:id="@+id/txtVehicleNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtVehicleType"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/register_edit_texts_hint"
+                    android:hint="short message"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings"
+                    tools:ignore="SpeakableTextPresentCheck" />
+                <TextView
+                    android:id="@+id/dateFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtVehicleNumber"
+                    android:layout_marginTop="15dp"
+                    android:text="From :"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <DatePicker
+                    android:id="@+id/datePickerFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_below="@id/dateFrom"
+                    android:layout_centerHorizontal="true"
+                    android:background="#F1F1F1"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+                <TextView
+                    android:id="@+id/dateTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/datePickerFrom"
+                    android:text="To :"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"/>
+                <DatePicker
+                    android:id="@+id/datePickerTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:datePickerMode="spinner"
+                    android:calendarViewShown="false"
+                    android:layout_below="@id/dateTo"
+                    android:background="#F1F1F1"
+                    android:layout_centerHorizontal="true"
+                    />
+
+                <Button
+                    android:id="@+id/next1_btn"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/datePickerTo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/round_button"
+                    android:text="Next"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

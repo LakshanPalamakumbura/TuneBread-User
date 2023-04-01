@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/gradient_back"
+tools:context=".RegisterLast">
+
+<!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-25dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_ash" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_btn"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/back_icon"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/view_caption_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:text="Last Step"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp" />
+<RelativeLayout
+    android:id="@+id/layoutMiddle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/view_caption_1"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="50dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/google_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="500dp" />
+            <SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sv_location"
+                android:queryHint="Search..."
+                android:iconifiedByDefault="false"
+                />
+            <Button
+                android:id="@+id/next1_btn"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/google_map"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/round_button"
+                android:text="Register"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
+</RelativeLayout>

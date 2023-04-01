@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Register"
+            android:icon="@drawable/register"
+            android:id="@+id/register"
+            />
+        <item
+            android:title="Account"
+            android:icon="@drawable/person"
+            android:id="@+id/account"
+            />
+        <item
+            android:title="Alert"
+            android:icon="@drawable/notification"
+            android:id="@+id/alert"
+            />
+        <item
+            android:title="Report"
+            android:icon="@drawable/report"
+            android:id="@+id/report"
+            />
+    </group>
+    <item android:title=""
+        >
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:title="Setting"
+                    android:icon="@drawable/setting"
+                    android:id="@+id/setting"
+                    />
+                <item
+                    android:title="Log Out"
+                    android:icon="@drawable/back_icon"
+                    android:id="@+id/logout"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>

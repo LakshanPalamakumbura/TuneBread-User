@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lak.tunebreaduser">
+
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TuneBreadUser"
+        tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name="com.lak.tunebreaduser.OrganizationMain"-->
+<!--            android:exported="true" />-->
+        <activity
+            android:name="com.lak.tunebreaduser.GenerateReport"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.AccountSetting"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.UserAlert"
+            android:exported="true" />
+<!--        <activity-->
+<!--            android:name="com.lak.tunebreaduser.RegisterLastDirect"-->
+<!--            android:exported="true" />-->
+        <activity
+            android:name="com.lak.tunebreaduser.UserLogin"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.UserRegister"
+            android:exported="true" />
+<!--        <activity-->
+<!--            android:name="com.lak.tunebreaduser.ScanQRCode"-->
+<!--            android:exported="true" />-->
+<!--        <activity-->
+        <receiver
+            android:name=".Util.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+<!--            android:name="com.lak.tunebreaduser.GenerateQRCode"-->
+<!--            android:exported="true" />-->
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB5Osw35qxvWbQhMzF2xXiHg6AjZa3Iktw" />
+
+        <activity
+            android:name="com.lak.tunebreaduser.RegisterFirst"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.RegisterLast"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.RegisterSecond"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.AccountDetails"
+            android:exported="true" />
+        <activity
+            android:name="com.lak.tunebreaduser.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

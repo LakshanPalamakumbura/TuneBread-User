@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="12dp"
+    android:layout_marginTop="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@android:color/holo_orange_light"
+        >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:id="@+id/txtVehicleNumber"
+        android:text = "vehicle Number"
+        android:textColor="@color/errorMessageIconColor"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below = "@id/txtVehicleNumber"
+            android:layout_marginLeft="10dp"
+            android:textSize="17sp"
+            android:text = "Vehicle Type"
+            android:id="@+id/txtVehicleType"
+            android:textColor="@color/purple_500"
+            />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below = "@id/txtVehicleType"
+        android:layout_marginLeft="10dp"
+        android:text = "mobile Number"
+        android:textSize="15sp"
+        android:id="@+id/txtMobile"
+        android:textColor="@color/black"
+        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below = "@id/txtMobile"
+            android:layout_marginLeft="10dp"
+            android:text = "vehicle Time"
+            android:textSize="15sp"
+            android:id="@+id/txtTime"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

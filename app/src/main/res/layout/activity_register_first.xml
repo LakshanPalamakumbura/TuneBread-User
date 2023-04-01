@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterFirst"
+    android:background="@drawable/gradient_back">
+
+    <ImageView
+        android:id="@+id/view_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-25dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_ash" />
+
+    <TextView
+        android:id="@+id/view_caption_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Location Register"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/view_caption_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_caption_head"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Get On Board"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp" />
+    <RelativeLayout
+        android:id="@+id/layoutMiddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_caption_1"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/txtUserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/register_edit_texts_hint"
+                    android:hint="First Name"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings" />
+
+                <EditText
+                    android:id="@+id/txtUserEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUserName"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/register_edit_texts_hint"
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Spinner
+                    android:id="@+id/txtUtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUserEmail"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/register_edit_texts_tint_text_headings"
+                    android:hint="User Type"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings" />
+
+                <EditText
+                    android:id="@+id/txtRegPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtUtype"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/register_edit_texts_hint"
+                    android:hint="NIC"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings" />
+
+                <EditText
+                    android:id="@+id/txtRegConfPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtRegPassword"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/register_edit_texts_hint"
+                    android:hint="Email Address"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings" />
+
+                <EditText
+                    android:id="@+id/txtMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtRegConfPassword"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/register_edit_texts_hint"
+                    android:hint="Mobile"
+                    android:inputType="text|phone"
+                    android:minHeight="48dp"
+                    android:textColor="@color/register_edit_texts_tint_text_headings"
+                    android:textColorHint="@color/register_edit_texts_tint_text_headings" />
+
+                <Button
+                    android:id="@+id/next1_btn"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtMobile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/round_button"
+                    android:text="Next"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/cancle_btn"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@id/next1_btn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
+                    android:text="Cancle"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>
