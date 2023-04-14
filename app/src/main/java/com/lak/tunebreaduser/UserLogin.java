@@ -1,5 +1,4 @@
 package com.lak.tunebreaduser;
-//package com.example.policectcapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -143,7 +142,7 @@ public class UserLogin extends AppCompatActivity {
                                         appConfig.setUserLoggedIn();
 
                                         //chek again
-//                                        appConfig.setLoggedUserID(txtUserName.getText().toString());
+                                        appConfig.setLoggedUserID(txtUserName.getText().toString());
                                         appConfig.setUserType("org");
                                         return;
 //                                    }

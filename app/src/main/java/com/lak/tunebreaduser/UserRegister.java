@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.lak.tunebreaduser.Util.FirebaseDB;
-//import com.example.policectcapp.Util.AppConfig;
-//import com.example.policectcapp.Util.RealLocation;
-//import com.example.policectcapp.Util.Validator;
+import com.lak.tunebreaduser.Util.AppConfig;
+import com.lak.tunebreaduser.Util.RealLocation;
+import com.lak.tunebreaduser.Util.Validator;
 
 
 public class UserRegister extends AppCompatActivity {

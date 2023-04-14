@@ -9,15 +9,15 @@
     android:paddingLeft="16dp"
     android:layout_marginBottom="-70dp"
     >
+
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/boy"
         android:layout_centerVertical="true"
-        android:id="@+id/imageView"
-        />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="80dp"
+        android:src="@drawable/cuslogo" />
 
     <TextView
         android:id="@+id/name"

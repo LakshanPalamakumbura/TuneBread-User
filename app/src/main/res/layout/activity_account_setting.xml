@@ -50,7 +50,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/img_bottom"
-            android:text="Safe Auth"
+            android:text="Customer Info"
             android:textColor="@color/sign_up_edit_texts_tint_text_headings"
             android:textSize="20dp" />
 
@@ -114,7 +114,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Dilshan Jayasekara"
+                        android:text="Lakshan Palamakumbura"
                         android:textColor="@color/accout_settings_buttons"
                         android:textSize="13sp" />
 
@@ -148,7 +148,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="130susith@gmail.com"
+                        android:text="h.l.palamakumbura@gmail.com"
                         android:textColor="@color/accout_settings_buttons"
                         android:textSize="13sp" />
 
@@ -182,7 +182,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="962660142V"
+                        android:text="960810465V"
                         android:textColor="@color/accout_settings_buttons"
                         android:textSize="13sp" />
 
@@ -216,79 +216,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="0766414584"
+                        android:text="0758733558"
                         android:textColor="@color/accout_settings_buttons"
                         android:textSize="13sp" />
 
                     <View
                         style="@style/Divider"
                         android:layout_below="@id/txtMobileNumber"
-                        android:layout_marginTop="10dp"
-                        android:alpha="0.3" />
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/layout5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layout4"
-                    android:layout_marginTop="15dp"
-                    android:paddingStart="5dp">
-
-                    <TextView
-                        android:id="@+id/VehicleType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:text="Vehicle Type:"
-                        android:textColor="@android:color/black"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtVehicleType"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Car"
-                        android:textColor="@color/accout_settings_buttons"
-                        android:textSize="13sp" />
-
-                    <View
-                        style="@style/Divider"
-                        android:layout_below="@id/txtVehicleType"
-                        android:layout_marginTop="10dp"
-                        android:alpha="0.3" />
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/layout6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layout5"
-                    android:layout_marginTop="15dp"
-                    android:paddingStart="5dp">
-
-                    <TextView
-                        android:id="@+id/VehicleNum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:text="Vehicle Number:"
-                        android:textColor="@android:color/black"
-                        android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/txtVehicleNumber"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="CNA - 8090"
-                        android:textColor="@color/accout_settings_buttons"
-                        android:textSize="13sp" />
-
-                    <View
-                        style="@style/Divider"
-                        android:layout_below="@id/txtVehicleNumber"
                         android:layout_marginTop="10dp"
                         android:alpha="0.3" />
 
@@ -301,6 +235,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rtl_layout_top"
+                android:layout_marginTop="16dp"
                 android:paddingStart="20dp"
                 android:paddingTop="20dp"
                 android:paddingEnd="40dp">

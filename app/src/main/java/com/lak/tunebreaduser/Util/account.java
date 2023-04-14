@@ -1,6 +1,6 @@
 package com.lak.tunebreaduser.Util;
 
-public class account {
+public class Account {
 
     public String txtFname;
     public String txtEmail;
@@ -14,7 +14,7 @@ public class account {
 //    public String fromDate;
 //    public String toDate;
 //    public int mapType;
-    public account(String txtFname, String txtEmail, String txtPassword, String txtConfPassword){
+    public Account(String txtFname, String txtEmail, String txtPassword, String txtConfPassword){
         this.txtFname = txtFname;
         this.txtEmail = txtEmail;
         this.txtPassword = txtPassword;

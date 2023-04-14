@@ -1,5 +1,4 @@
 package com.lak.tunebreaduser;
-//package com.example.policectcapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +7,7 @@ import androidx.core.content.ContextCompat;
 
 //import com.example.policectcapp.Util.FirebaseDB;
 import com.lak.tunebreaduser.Util.FirebaseDB;
+import com.lak.tunebreaduser.Util.AppConfig;
 import com.google.android.gms.location.GeofencingClient;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -55,12 +55,14 @@ public class RegisterLast extends AppCompatActivity implements OnMapReadyCallbac
     double lotitude=0.0;
     private int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
+    AppConfig appConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_last);
         searchView = findViewById(R.id.sv_location);
+        appConfig = new AppConfig(getBaseContext());
         mapFragment = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map));
         nextButton = (Button)findViewById(R.id.next1_btn);
         Button backbtn = (Button)findViewById(R.id.back_btn);
@@ -133,6 +135,9 @@ public class RegisterLast extends AppCompatActivity implements OnMapReadyCallbac
                 FirebaseDB firebaseDB = new FirebaseDB(RegisterLast.this);
                 firebaseDB.checkAndCreateLocation(RegisterLast.this,getIntent().getStringExtra("mobile"), String.valueOf(lotitude), String.valueOf(langtitude));
                 firebaseDB.checkAndCreateUser(RegisterLast.this,
+//                        appConfig.getLogedUserID(),
+//                getIntent().getStringExtra(appConfig.setLoggedUserID),
+//                        getIntent().appConfig.getLogedUserID(),
                 getIntent().getStringExtra("fname"),
                 getIntent().getStringExtra("lname"),
                 getIntent().getStringExtra("Utype"),
@@ -143,7 +148,7 @@ public class RegisterLast extends AppCompatActivity implements OnMapReadyCallbac
                 getIntent().getStringExtra("vehicleNumber"),
                 getIntent().getStringExtra("fromDate"),
                 getIntent().getStringExtra("toDate"),
-                        1);
+                        1,appConfig.getLogedUserID());
             }
         });
         backbtn.setOnClickListener(new View.OnClickListener() {

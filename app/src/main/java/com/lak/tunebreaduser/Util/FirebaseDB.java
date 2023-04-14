@@ -1,4 +1,3 @@
-//package com.example.policectcapp.Util;
 package com.lak.tunebreaduser.Util;
 
 import android.app.Activity;
@@ -12,9 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import com.andrognito.flashbar.Flashbar; //icomment this error
-import com.andrognito.flashbar.anim.FlashAnim; //icomment this error
-//import com.lak.tunebreaduser.GenerateQRCode;//i comment this QR one
+import com.andrognito.flashbar.Flashbar;
+import com.andrognito.flashbar.anim.FlashAnim;
+//import com.lak.tunebreaduser.GenerateQRCode;
 //import com.example.policectcapp.GenerateQRCode;
 import com.lak.tunebreaduser.MainActivity;
 //import com.example.policectcapp.MainActivity;
@@ -47,9 +46,9 @@ public class FirebaseDB {
     StorageReference uploadFileReferenace;
     AppConfig appConfig;
     User user;
-    account account;
+    Account account;
     Location location;
-    driver driver;
+    Driver driver;
 //    DirectLocation dirLocation;
     Context context;
     Dialog dialog;
@@ -77,11 +76,12 @@ public class FirebaseDB {
         if (dialog != null)
             dialog.cancel();
     }
-    public void checkAndCreateUser(final Context context, final String fname, final String lname, final String userType, final String NIC, final String email, final String phone, final String vehicleType, final String vehicleNumber, final String fromDate, final String toDate, final int mapType) {
+    public void checkAndCreateUser(final Context context, final String fname, final String lname, final String userType, final String NIC, final String email, final String phone, final String vehicleType, final String vehicleNumber, final String fromDate, final String toDate, final int mapType, final String uid) {
 
         showProgressDialog();
 
-        user = new User(fname,lname,userType, NIC, email, phone, vehicleType, vehicleNumber, fromDate, toDate, mapType);
+//        mDatabase.child("users").child(mobile).child("authorize").setValue(false);
+        user = new User(fname,lname,userType, NIC, email, phone, vehicleType, vehicleNumber, fromDate, toDate, mapType, uid);
         databaseReference = firebaseDatabase.getReference();
 
         databaseReference.child("users").child(phone).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -110,7 +110,7 @@ public void registerNewUser(final Context context, final String txtFname, final 
 
     showProgressDialog();
 
-    account = new account(txtFname,txtEmail,txtPassword,txtConfPassword);
+    account = new Account(txtFname,txtEmail,txtPassword,txtConfPassword);
     databaseReference = firebaseDatabase.getReference();
 
     databaseReference.child("accounts").child(txtEmail).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -234,7 +234,6 @@ public void registerNewUser(final Context context, final String txtFname, final 
 //        });
 //    }
 
-    //i comment this
     private Flashbar showAlertDialog(String message) {
         return new Flashbar.Builder((Activity) context)
                 .gravity(Flashbar.Gravity.TOP)

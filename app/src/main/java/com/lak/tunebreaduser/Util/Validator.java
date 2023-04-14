@@ -1,5 +1,4 @@
 package com.lak.tunebreaduser.Util;
-//package com.example.policectcapp.Util;
 
 public class Validator {
     final static String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";

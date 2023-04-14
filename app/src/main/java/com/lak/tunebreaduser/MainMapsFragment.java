@@ -1,6 +1,4 @@
-
 package com.lak.tunebreaduser;
-//package com.example.policectcapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,6 +14,7 @@ import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 //import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -36,6 +35,7 @@ import com.lak.tunebreaduser.Util.AppConfig;
 import com.lak.tunebreaduser.Util.RealLocation;
 import com.lak.tunebreaduser.Util.Location;
 //import com.example.policectcapp.Util.RealLocation;
+import com.lak.tunebreaduser.Util.TaskLoadedCallback;
 import com.lak.tunebreaduser.Util.UserClusterRendered;
 //import com.example.policectcapp.Util.UserClusterRendered;
 import com.lak.tunebreaduser.Util.GeofenceHelper;
@@ -67,7 +67,7 @@ import com.google.maps.android.clustering.ClusterManager;
 import java.io.IOException;
 import java.util.List;
 
-public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
+public class MainMapsFragment extends Fragment implements OnMapReadyCallback, TaskLoadedCallback {
 
     private GoogleMap mMap;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -127,7 +127,7 @@ public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
         }
         mMap.setMyLocationEnabled(true);
     }
-//    private void zoomToUserLocation() {
+    //    private void zoomToUserLocation() {
 //        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 //            return;
 //        }
@@ -215,14 +215,14 @@ public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
 
 //        String userID = appConfig.setLoggedUserID();
 //        if (userID != null) {
-            mDatabase.child("location").child("0774603387").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
+        mDatabase.child("location").child("0774603387").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getValue() != null) {
                     Log.d("DB", dataSnapshot.getValue().toString());
                     locationObj = dataSnapshot.getValue(Location.class);
                     LatLng latLng = new LatLng(Double.parseDouble(locationObj.latitude),Double.parseDouble(locationObj.longitude));
-                    handleMapLongClick(latLng);
+                   handleMapLongClick(latLng);
                 } else {
                     Log.i("DB", "Location Doesn't Available");
                 }
@@ -242,52 +242,53 @@ public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
 
 
 
-
     private void handleMapLongClick(LatLng latLng) {
         Log.d("myLog", "Called...!");
         mMap.clear();
         addMarker(latLng);
         addCircle(latLng, GEOFENCE_RADIUS);
-//        addGeofence(latLng, GEOFENCE_RADIUS);
+//            addGeofence(latLng, GEOFENCE_RADIUS);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
 
     }
 
-//    private void addGeofence(LatLng latLng, float radius) {
-//        Log.d("myLog", "Adding......!"+GEOFENCE_ID);
-//        Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, latLng, radius, Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_DWELL | Geofence.GEOFENCE_TRANSITION_EXIT);
-//        GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
-//        PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
-//
-//        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            // TODO: Consider calling
-//            //    ActivityCompat#requestPermissions
-//            // here to request the missing permissions, and then overriding
-//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-//            //                                          int[] grantResults)
-//            // to handle the case where the user grants the permission. See the documentation
-//            // for ActivityCompat#requestPermissions for more details.
-//            return;
-//        }
-//        geofencingClient.addGeofences(geofencingRequest, pendingIntent).addOnSuccessListener(new OnSuccessListener<Void>() {
-//            @Override
-//            public void onSuccess(Void unused) {
-//                Log.d(TAG,"Geo Fence Added..!");
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//                String errorMessage = geofenceHelper.getErrorString(e);
-//                Log.d(TAG,errorMessage);
-//            }
-//        });
-//    }
+    private void addGeofence(LatLng latLng, float radius) {
+        Log.d("myLog", "Adding......!"+GEOFENCE_ID);
+        Geofence geofence = geofenceHelper.getGeofence(GEOFENCE_ID, latLng, radius, Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_DWELL | Geofence.GEOFENCE_TRANSITION_EXIT);
+        GeofencingRequest geofencingRequest = geofenceHelper.getGeofencingRequest(geofence);
+        PendingIntent pendingIntent = geofenceHelper.getPendingIntent();
+
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        geofencingClient.addGeofences(geofencingRequest, pendingIntent).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Log.d(TAG,"Geo Fence Added..!");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                String errorMessage = geofenceHelper.getErrorString(e);
+                Log.d(TAG,errorMessage);
+            }
+        });
+    }
 
 
     private void addMarker(LatLng latLng) {
         MarkerOptions markerOptions = new MarkerOptions().position(latLng);
         markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.customer));
         mMap.addMarker(markerOptions);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
     }
 
     private void addCircle(LatLng latLng, float radius) {
@@ -349,9 +350,9 @@ public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
             markerOptions1.position(latLng);
 //            markerOptions1.icon(BitmapDescriptorFactory.fromResource(R.drawable.policecar));
 //            markerOptions1.icon(BitmapDescriptorFactory.fromResource(R.drawable.customer));
-            markerOptions1.rotation(lastLocation.getBearing());
-            markerOptions1.anchor((float) 0.5, (float) 0.5);
-            userLocationMarker = mMap.addMarker(markerOptions1);
+//            markerOptions1.rotation(lastLocation.getBearing());
+//            markerOptions1.anchor((float) 0.5, (float) 0.5);
+//            userLocationMarker = mMap.addMarker(markerOptions1);
             //  mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
         } else {
             //use the previously created marker
@@ -360,6 +361,11 @@ public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
             // mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
             // mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         }
+    }
+
+    @Override
+    public void onTaskDone(Object... values) {
+
     }
 //    private void addCircle(android.location.Location lastLocation, float radius) {
 //        LatLng latLng = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
@@ -372,4 +378,5 @@ public class MainMapsFragment extends Fragment implements OnMapReadyCallback {
 //        mMap.addCircle(circleOptions);
 //    }
 }
+
 

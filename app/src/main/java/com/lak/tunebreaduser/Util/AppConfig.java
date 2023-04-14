@@ -1,4 +1,3 @@
-//package com.example.policectcapp.Util;
 package com.lak.tunebreaduser.Util;
 
 import android.content.Context;
@@ -60,6 +59,7 @@ public class AppConfig {
 //    }
 
     public String getLogedUserID() {return sharedPreferences.getString("LOGGED_USER_ID", null); }
+
 
     public void setUserAuthorize() {
         editor = sharedPreferences.edit();

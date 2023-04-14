@@ -1,7 +1,11 @@
-//package com.example.policectcapp.Util;
 package com.lak.tunebreaduser.Util;
 
+import com.lak.tunebreaduser.Util.AppConfig;
+
 public class User {
+
+    //AppConfig appConfig = new AppConfig();
+    public String uid;
     public String fname;
     public String lname;
     public String UserType;
@@ -16,7 +20,9 @@ public class User {
     public int mapType;
 
 
-    public User(String fname, String lname, String userType, String NIC, String email, String phone, String vehicleType, String vehicleNumber, String fromDate, String toDate,int mapType) {
+    public User(String fname, String lname, String userType, String NIC, String email, String phone, String vehicleType, String vehicleNumber, String fromDate, String toDate,int mapType, String uid) {
+//        this.uid = uid;//this.uid = appConfig.getLogedUserID();
+        this.uid = uid;
         this.fname = fname;
         this.lname = lname;
         UserType = userType;

@@ -1,10 +1,11 @@
-//package com.example.policectcapp.Util;
 package com.lak.tunebreaduser.Util;
 
 import android.content.Context;
+import android.graphics.Color;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.lak.tunebreaduser.R;
@@ -27,6 +28,8 @@ public class UserClusterRendered extends DefaultClusterRenderer<RealLocation> {
         final BitmapDescriptor markerDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.greencar);
         markerOptions.icon(markerDescriptor).snippet(item.getTitle());
 //        markerOptions.title(item.getTitle());
+
+
     }
 
 
